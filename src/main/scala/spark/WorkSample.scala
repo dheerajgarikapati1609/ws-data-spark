@@ -22,9 +22,8 @@ object WorkSample {
   }
 
   def main(args: Array[String]): Unit = {
-    System.setProperty("hadoop.home.dir", "C:/Users/dheer")
-    val dataSample = readData("data/DataSample.csv")
-    val poiData = readData("data/POIList.csv")
+    val dataSample = readData("/tmp/data/DataSample.csv")
+    val poiData = readData("/tmp/data/POIList.csv")
 
     //1. Clean Up Task for suspicious records
     val cleanData: DataFrame = TasksOneAndTwo.cleanUpTask(dataSample)
